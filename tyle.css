@@ -1,0 +1,176 @@
+body{
+    background-color: black;
+
+}
+
+.nav{
+    background-color: black;
+    width: 15%;
+    height: 100vh;
+    position: fixed;
+    transition: 1s;
+    border-radius: 5px;
+    margin: 0% -13%;
+
+    
+}
+.bt{
+    background-color: blue;
+    width: 75%;
+    height: 5vh;
+    border-radius: 5px;
+    margin: 5%;
+}
+.home{
+    background-color: black;
+    margin: 0% 80%;
+    display: grid;
+    border: none;
+    color: white;
+    border-radius: 3px;
+
+}
+.span{
+    background-color: blue;
+    width: 30px;
+    height: 6px;
+    margin: 4%;
+
+
+    
+}
+
+.head{
+    background-color: white;
+    width: 80%;
+    height: 15vh;
+    position: fixed;
+    margin: 0% 20%;
+    display: none;
+}
+.item{
+background-color: silver;
+    position: fixed;
+    margin: 13% 51%;
+    display: none;
+    width: 450px;
+}
+.lis{
+    background-color: silver;
+    width: 45%;
+    height: 90vh;
+    overflow: auto;
+    display: none;
+    margin: 3% 6%;
+}
+.store{
+    background-color: white;
+    position: fixed;
+    margin: 0% 13%;
+    display: none;
+    width: 85%;
+    height: 90vh;
+    overflow: auto;
+}
+.about{
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    display: none;
+    margin: 0% 8%;
+    font-size: 45px;
+    color: red;
+
+}
+.body{
+    color: red;
+    animation: bo 5s infinite;
+    font-size: 45px;
+    align-items: center;
+    margin: 0% 0%;
+    width: 100%;
+    position: fixed;
+    
+    
+
+}
+@keyframes bo{
+    from{font-size: 10px;margin: 20% 37%;}
+    
+    to{font-size: 45px;color: purple;margin: 20% 37%;}
+    
+}
+.pass{
+    background-color: rgb(95, 61, 105);
+    width: 110%;
+    height: 110vh;
+    position: fixed;
+    margin: -4% -4%;
+
+}
+.key{
+    background-color: white;
+    border: 4px solid purple;
+    border-radius: 14px;
+    width: 300px;
+    height: 450px;
+    margin: 17% 40%;
+    animation: my 3s;
+    position: fixed;
+    display: none;
+
+}
+@keyframes my{
+    from{width: 120%;height: 110vh;rotate: 360deg;}
+}
+.start{
+    background-color: rgb(10, 248, 82);
+    width: 110%;
+    height: 110vh;
+    position: fixed;
+    margin: -1% 3%;
+    transition: 3s;
+    
+}    
+.WEL{
+    margin: 25% 17%;
+    width: 100%;
+    animation: we 4s ;
+    position: fixed;
+    
+}
+@keyframes we {
+    from{font-size: 0px;}
+    to{font-size: 34px;}
+}
+.wel{
+    font-size: 34px;
+    position: fixed;
+}
+.the{
+    background-color: rgb(57, 13, 255);
+    font-size: 34px;
+    width: 110%;
+    height: 110vh;
+    position: fixed;
+    margin: -1% 3%;
+    display: none;
+}
+.wor{
+    margin: 23% 27%;
+    width: 100%;
+    animation: the 4s;
+    
+}
+@keyframes the{
+    from{font-size: 150px;margin: 20% -12%;}
+    to{font-size: 24px;margin: 23% 27%;}
+}
+.total{
+    background-color: red;
+    margin: 23% 65%;
+    position: fixed;width: 200px;
+    display: none;
+}

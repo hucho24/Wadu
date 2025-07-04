@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wadunia Scrap Metal</title>
+  
+</head>
+<link rel="stylesheet" href="tyle.css">
+<body>
+    
+    
+       
+    </div>
+    <div class="body" id="body">WADUNIA SCRAPE METAL
+
+        <div class="h2">THE WOLRD</div>
+    </div>
+<div class="nav" id="nav">
+    <button class="home" onclick="menu()">
+        <span class="span"></span>
+        <span  class="span"></span>
+        <span  class="span"></span>
+        <span  class="span"></span>
+    </button>
+    <button onclick="home()" class="bt">home</button>
+    <button onclick="buy()" class="bt">buying list</button>
+    <button onclick="stoe()" class="bt">storelist</button>
+    <button onclick="about()" class="bt">about</button>
+   
+</div>
+
+<script>
+    function about(){
+        const about=document.getElementById("about")
+        about.style.display='block'
+        const store=document.getElementById("store")
+        store.style.display='none'
+        const lis=document.getElementById("lis")
+lis.style.display='none'
+const item=document.getElementById("item")
+item.style.display='none'
+const body=document.getElementById("body")
+    body.style.display='none'
+    const total=document.getElementById("total")
+    total.style.display='none'
+}
+    
+</script>
+<div class="about" id="about">
+
+    ABOUT
+    <h1>hucho24</h1>
+    @gmail>
+    
+    samuelnyongesa37@gmail.com
+</div>
+<script>
+    function menu(){
+    const nav=document.getElementById("nav")
+  if(nav.style.margin=='0% -13%'){
+    nav.style.margin='0% -2%'
+  }
+  else{
+    nav.style.margin='0% -13%'
+  }
+}
+function buy(){
+    const head=document.getElementById("head")
+    head.style.display='block'
+    const lis=document.getElementById("lis")
+    lis.style.display='block'
+    const item=document.getElementById("item")
+    item.style.display='block'
+    const total=document.getElementById("total")
+    total.style.display='block'
+    
+        const store=document.getElementById("store")
+        store.style.display='none'
+        const about=document.getElementById("about")
+        about.style.display='none'
+        const body=document.getElementById("body")
+    body.style.display='none'
+}
+
+  </script>
+  
+
+  <!-- Left Column: Active List -->
+  <div class="column">
+   <div class="head" id="head"> <h2>Buying Entry</h2>
+    <input id="sellerName" placeholder="Seller Name" />
+    <select id="itemName" onchange="setPrice()">
+      <option value="">-- Select Item --</option>
+      <option value="plastic">Plastic</option>
+      <option value="corton">Corton</option>
+      <option value="lite">Lite</option>
+      <option value="white">white</option>
+      
+      <option value="heavy">heavy</option>
+      <option value="plastic32">plastic32</option>
+      <option value="quecher">quencher</option>
+      <option value="pvc">pvc</option>
+      <option value="bones">bones</option>
+      <option value="soft">soft</option>
+      <option value="ld">LD</option>
+      <option value="chupa">chupa</option>
+      <option value="vunjika">vunjika</option>
+      <option value="kenus">kenus</option>
+      <option value="prof">prof</option>
+      <option value="clear">clear</option>
+      <option value="hard">hard</option>
+      <option value="soft">soft</option>
+      <option value="battery">battery</option>
+    </select>
+    <input id="quantity" type="number" placeholder="Quantity" />
+    <input id="price" type="number" placeholder="Price" readonly />
+    <button onclick="addItem()">Add to List</button>
+    <button onclick="clearAll()">Delete All</button>
+    <button onclick="saveToStore()">Save to Store</button></div>
+
+    <div class="item" id="item"><h3>Item Totals</h3>
+    <div id="itemTotals" class="totals"></div></div>
+
+    <div class="total" id="total">
+      <span id="allQuantity">All Quantity: 0</span> |
+      <span id="grandTotal">Total Amount: Ksh 0</span>
+    </div>
+
+    <div class="lis" id="lis"><h3>Seller Lists</h3>
+    <div id="listContainer"></div></div>
+  </div>
+
+  <!-- Right Column: Store List -->
+   <script src="script.js"></script>
+  <div class="store" id="store"><div class="column">
+    <h2>Store List</h2>
+    <button onclick="clearStore()">Delete All Store List</button>
+    <div id="storeList"></div>
+  </div>
+  </div>
+  
+  <div class="pass" id="pass" >
+    <div class="start" id="start">
+        <h1 class="WEL">WADUNIA SCRAPE METAL</h1>
+        
+    </div>
+    <div class="the" id="the">
+        <h1 class="wor">THE WOLRD</h1>
+    </div>
+    <div class="key" id="key">
+        <h1 style="color: red;margin: 0% 36%;">WADUNIA</h1>
+        <h2 style="color: blue; margin: 4% 36%;">login</h2>
+        <label>username<input type="text" name="username" id="name" required placeholder="username"></label><br><br>
+        <label>password<input type="password" id="password" placeholder="password"> </label><br><br>
+        <button onclick="sub()">submit</button>
+    </div>
+    
+
+  <script>
+    let data = JSON.parse(localStorage.getItem("sellerData")) || {};
+    let store = JSON.parse(localStorage.getItem("storeData")) || {};
+
+    const itemPrices = {
+      plastic: 30,
+      corton: 10,
+      lite: 30,
+      white:20,heavy:50,
+      plastic32:32,
+      quecher:20,pvc:25,bones:10,soft:150,LD:10,chupa:1,vunjika:2,kenus:700,prof:400,clear:15,hard:100,
+      battery:50
+
+    };
+
+    function saveData() {
+      localStorage.setItem("sellerData", JSON.stringify(data));
+    }
+
+    function saveStore() {
+      localStorage.setItem("storeData", JSON.stringify(store));
+    }
+
+    function addItem() {
+      const seller = document.getElementById("sellerName").value.trim();
+      const item = document.getElementById("itemName").value.trim().toLowerCase();
+      const qty = parseFloat(document.getElementById("quantity").value);
+      const price = parseFloat(document.getElementById("price").value);
+      if (!seller || !item || isNaN(qty) || isNaN(price)) return alert("Fill all fields properly");
+
+      if (!data[seller]) data[seller] = [];
+      data[seller].push({ item, quantity: qty, price, total: qty * price });
+
+      saveData();
+      renderList();
+    }
+
+    function deleteSeller(seller) {
+      delete data[seller];
+      saveData();
+      renderList();
+    }
+
+    function clearAll() {
+      if (confirm("Delete ALL current data?")) {
+        data = {};
+        saveData();
+        renderList();
+      }
+    }
+
+    function calculateItemTotals() {
+      let itemSummary = {};
+
+      for (let seller in data) {
+        data[seller].forEach(entry => {
+          if (!itemSummary[entry.item]) {
+            itemSummary[entry.item] = { quantity: 0, amount: 0 };
+          }
+          itemSummary[entry.item].quantity += entry.quantity;
+          itemSummary[entry.item].amount += entry.total;
+        });
+      }
+
+      const itemTotalsDiv = document.getElementById("itemTotals");
+      itemTotalsDiv.innerHTML = "";
+
+      for (let item in itemSummary) {
+        const div = document.createElement("div");
+        div.textContent = `${item}: Quantity = ${itemSummary[item].quantity}, Amount = Ksh ${itemSummary[item].amount.toFixed(2)}`;
+        itemTotalsDiv.appendChild(div);
+      }
+    }
+
+    function renderList() {
+      const container = document.getElementById("listContainer");
+      container.innerHTML = "";
+      let grandTotal = 0;
+      let totalQty = 0;
+
+      for (let seller in data) {
+        const group = document.createElement("div");
+        group.className = "seller-group";
+
+        const title = document.createElement("h4");
+        title.textContent = `Seller: ${seller}`;
+        group.appendChild(title);
+
+        let sellerTotal = 0;
+
+        data[seller].forEach((entry, index) => {
+          sellerTotal += entry.total;
+          totalQty += entry.quantity;
+
+          const row = document.createElement("div");
+          row.className = "item-row";
+
+          const name = document.createElement("span");
+          name.textContent = `${entry.item}`;
+
+          const qtyInput = document.createElement("input");
+          qtyInput.type = "number";
+          qtyInput.value = entry.quantity;
+          qtyInput.onchange = () => {
+            entry.quantity = parseFloat(qtyInput.value);
+            entry.total = entry.quantity * entry.price;
+            saveData();
+            renderList();
+          };
+
+          const priceInput = document.createElement("input");
+          priceInput.type = "number";
+          priceInput.value = entry.price;
+          priceInput.onchange = () => {
+            entry.price = parseFloat(priceInput.value);
+            entry.total = entry.quantity * entry.price;
+            saveData();
+            renderList();
+          };
+
+          const total = document.createElement("span");
+          total.textContent = `= Ksh ${entry.total.toFixed(2)}`;
+
+          row.append(name, qtyInput, priceInput, total);
+          group.appendChild(row);
+        });
+
+        const sellerTotalRow = document.createElement("div");
+        sellerTotalRow.className = "totals";
+        sellerTotalRow.textContent = `Seller Total: Ksh ${sellerTotal.toFixed(2)}`;
+        group.appendChild(sellerTotalRow);
+
+        const delBtn = document.createElement("button");
+        delBtn.textContent = "Delete Seller List";
+        delBtn.onclick = () => deleteSeller(seller);
+        group.appendChild(delBtn);
+
+        container.appendChild(group);
+        grandTotal += sellerTotal;
+      }
+
+      document.getElementById("grandTotal").textContent = `Total Amount: Ksh ${grandTotal.toFixed(2)}`;
+      document.getElementById("allQuantity").textContent = `All Quantity: ${totalQty}`;
+      calculateItemTotals();
+    }
+
+    function saveToStore() {
+      const today = new Date().toISOString().split("T")[0];
+      if (!store[today]) store[today] = [];
+
+      for (let seller in data) {
+        store[today].push({ seller, items: data[seller], total: data[seller].reduce((sum, e) => sum + e.total, 0) });
+      }
+
+      saveStore();
+      data = {};
+      saveData();
+      renderList();
+      renderStore();
+    }
+
+    function renderStore() {
+      const storeDiv = document.getElementById("storeList");
+      storeDiv.innerHTML = "";
+      let itemSummary = {};
+
+      for (let date in store) {
+        const dateGroup = document.createElement("div");
+        dateGroup.innerHTML = `<h4>Date: ${date}</h4>`;
+
+        store[date].forEach((entry, idx) => {
+          const sellerDiv = document.createElement("div");
+          sellerDiv.className = "store-seller";
+          sellerDiv.innerHTML = `<strong>Seller: ${entry.seller}</strong><br>Total: Ksh ${entry.total.toFixed(2)}<br>`;
+
+          entry.items.forEach(item => {
+            const itemDiv = document.createElement("div");
+            itemDiv.textContent = `${item.item} - Qty: ${item.quantity}, Price: ${item.price}, Total: Ksh ${item.total.toFixed(2)}`;
+            sellerDiv.appendChild(itemDiv);
+
+            if (!itemSummary[item.item]) {
+              itemSummary[item.item] = { quantity: 0, amount: 0 };
+            }
+            itemSummary[item.item].quantity += item.quantity;
+            itemSummary[item.item].amount += item.total;
+          });
+
+          const delBtn = document.createElement("button");
+          delBtn.textContent = "Delete";
+          delBtn.onclick = () => {
+            store[date].splice(idx, 1);
+            if (store[date].length === 0) delete store[date];
+            saveStore();
+            renderStore();
+          };
+
+          sellerDiv.appendChild(delBtn);
+          dateGroup.appendChild(sellerDiv);
+        });
+
+        storeDiv.appendChild(dateGroup);
+      }
+
+      const summaryDiv = document.createElement("div");
+      summaryDiv.className = "totals";
+      summaryDiv.innerHTML = "<h4>List Quantity Summary</h4>";
+
+      for (let item in itemSummary) {
+        const line = document.createElement("div");
+        line.textContent = `${item}: Quantity = ${itemSummary[item].quantity}, Amount = Ksh ${itemSummary[item].amount.toFixed(2)}`;
+        summaryDiv.appendChild(line);
+      }
+
+      storeDiv.appendChild(summaryDiv);
+    }
+
+    function clearStore() {
+      if (confirm("Delete entire store archive?")) {
+        store = {};
+        saveStore();
+        renderStore();
+      }
+    }
+
+    function setPrice() {
+      const item = document.getElementById("itemName").value;
+      const priceInput = document.getElementById("price");
+      priceInput.value = itemPrices[item] || '';
+    }
+
+    renderList();
+    renderStore();
+  </script>
+</body>
+</html>
